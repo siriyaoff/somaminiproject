@@ -2,7 +2,7 @@ const IntroComponent=()=>
 {
     return(
         <div style={style.background}>
-            hello it's intro
+            Intro
         </div>
     )
 }
