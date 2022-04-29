@@ -8,7 +8,7 @@ const App=()=>
 
   return(
     <div>
-        {"<IntroComponent></IntroComponent>"}
+        <IntroComponent></IntroComponent>
         <MainComponent></MainComponent>
        
     </div>
