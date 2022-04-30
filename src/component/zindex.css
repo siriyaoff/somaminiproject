@@ -1,0 +1,7 @@
+.Upper{
+    position:absolute;
+    z-index: 1;
+}
+.Lower{
+    z-index:0;
+}
