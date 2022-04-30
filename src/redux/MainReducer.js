@@ -15,7 +15,7 @@ return {
 
 const initialState={
     sharing:0,
-    data:['a']
+    data:[]
 }
 export default function reducer(state = initialState, action) {
     switch (action.type) {

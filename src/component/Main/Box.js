@@ -3,6 +3,14 @@ import DescComponent from "./DescComponent"
 import Thumbnail from "./Thumbnail"
 import Slider from 'react-slick'
 import {useState} from 'react'
+import store from '../../index'
+// https://i1.ytimg.com/vi/VIDEO-ID/default.jpg
+// https://www.youtube.com/watch?v=BdwfiToXEio
+
+const thumblink=() => {
+    let ulinks=store.getState().data;
+}
+
 const utubeUrl=['https://img.youtube.com/vi/nVCubhQ454c/2.jpg','https://img.youtube.com/vi/eN5mG_yMDiM/2.jpg','https://img.youtube.com/vi/eN5mG_yMDiM/2.jpg','https://img.youtube.com/vi/eN5mG_yMDiM/2.jpg','https://img.youtube.com/vi/eN5mG_yMDiM/2.jpg']
 const Box=()=>
 {

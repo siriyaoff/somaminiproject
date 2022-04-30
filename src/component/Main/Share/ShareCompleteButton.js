@@ -12,12 +12,28 @@ const mapDispatchToProps = {
   AddData,
 };
 
+const createPlaylist= () => {
+  let ulink=document.querySelector('#root > div > div > div.Upper > div > div:nth-child(1) > div:nth-child(5) > input[type=text]');
+  let tag=document.querySelectorAll('#root > div > div > div.Upper > div > div:nth-child(1) > div:nth-child(7) > input[type=text]');
+  let tags=[];
+  for(let t of tag){
+    tags.push(t.value);
+  }
+  return {
+    "id": 1,
+    "name": "anony",
+    "tags": tags,
+    "songs": ulink,
+  };
+}
+
 const ShareCompleteButton = () => {
   return (
     <div
       style={style.shareCompleteButton}
       onClick={() => {
-        store.dispatch(AddData("a"));
+        console.log(JSON.parse(JSON.stringify(store.getState().data)));
+        store.dispatch(AddData(createPlaylist()));
         store.dispatch(Sharing(0));
       }}
     >
@@ -25,6 +41,7 @@ const ShareCompleteButton = () => {
     </div>
   );
 };
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
