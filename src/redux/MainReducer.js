@@ -15,6 +15,7 @@ return {
 
 const initialState={
     sharing:0,
+    pidx:0,
     data:[]
 }
 export default function reducer(state = initialState, action) {
@@ -27,6 +28,7 @@ export default function reducer(state = initialState, action) {
     case 'AddData':
     return {
         ...state,
+        pidx: state.pidx+1,
         data:state.data.concat(action.value)
     }
  

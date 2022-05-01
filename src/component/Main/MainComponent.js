@@ -25,7 +25,7 @@ const MainComponent=()=>
         <div style={style.background}>
             
             {store.getState()['sharing']?<div className='Upper'><ShareComponent></ShareComponent></div>:null}
-            {database.map(()=>{return(<Box></Box>)})}
+            {database.map((pliObj)=>{return(<Box pliObj={pliObj}></Box>)})}
             <ShareButton></ShareButton>
         </div>
     )

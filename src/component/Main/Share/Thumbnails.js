@@ -5,13 +5,11 @@ const utubeUrl = [
   "https://www.youtube.com/watch?v=B1Mj0MwiwCE",
 ];
 
-const Thumbnails = () => {
+const Thumbnails = (props) => {
   return (
     <div style={{ margin: "10px" }}>
       <div style={style.thumbnails}>
-        {utubeUrl.map((idx) => {
-          return <Thumbnail url={idx}></Thumbnail>;
-        })}
+        <Thumbnail url={props.url}></Thumbnail>
         <div style={style.plus}>+</div>
       </div>
     </div>

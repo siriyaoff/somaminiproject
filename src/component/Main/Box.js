@@ -7,23 +7,30 @@ import store from '../../index'
 // https://i1.ytimg.com/vi/VIDEO-ID/default.jpg
 // https://www.youtube.com/watch?v=BdwfiToXEio
 
-const thumblink=() => {
-    let ulinks=store.getState().data;
+const thumblink=(pliObj) => {
+    let ulinks=pliObj.songs;
+    //console.log('ulink JSON:\n'+JSON.parse(JSON.stringify(ulinks)));
+    let res=[];
+    for(let s of ulinks){
+        res.push('https://i1.ytimg.com/vi/'+s.slice(-11)+'/default.jpg');
+    }
+    console.log('res:\n'+res);
+    return res;
 }
 
-const utubeUrl=['https://img.youtube.com/vi/nVCubhQ454c/2.jpg','https://img.youtube.com/vi/eN5mG_yMDiM/2.jpg','https://img.youtube.com/vi/eN5mG_yMDiM/2.jpg','https://img.youtube.com/vi/eN5mG_yMDiM/2.jpg','https://img.youtube.com/vi/eN5mG_yMDiM/2.jpg']
-const Box=()=>
+const Box=(props)=>
 {
     
     const settings = {
         dots: true,
         speed: 200,
-        slidesToShow: 3,
+        //slidesToShow: 3,
         centerMode: true,
         className:'center',
         slickArrowColor:'red'
       };
     const [click,setClick]=useState(-1)
+
     return(
         <div className='Lower' style={{margin:'10px'}}>
             <DescComponent></DescComponent>
@@ -32,7 +39,7 @@ const Box=()=>
             <div style={{paddingTop:'20px',width:'90%',margin:'0 auto'}}>
                 
             <Slider {...settings}>
-                {utubeUrl.map((idx)=>{return(<Thumbnail url={idx}></Thumbnail>)})}
+                {thumblink(props.pliObj).map((turl)=>{return(<Thumbnail url={turl}></Thumbnail>)})}
             </Slider>
             </div>
             
